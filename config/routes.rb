@@ -2,6 +2,13 @@ ControlLaboratorio::Application.routes.draw do
   resources :mediciones
 
   resources :hornos
+    member do
+      get :nuevas_mediciones
+      post :crear_mediciones
+    end
+  end
+
+  root :to => "hornos#index"
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110526101919) do
+ActiveRecord::Schema.define(:version => 20110526145106) do
 
   create_table "hornos", :force => true do |t|
     t.string   "codigo"
@@ -20,11 +20,29 @@ ActiveRecord::Schema.define(:version => 20110526101919) do
     t.datetime "updated_at"
   end
 
+  create_table "mediciones", :force => true do |t|
+    t.integer  "horno_id"
+    t.datetime "fecha"
+    t.string   "operario"
+    t.integer  "velocidad_horno"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "quemadores", :force => true do |t|
     t.integer  "horno_id"
     t.string   "nombre"
     t.string   "cantidad_mecheros"
     t.string   "posicion"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "valores", :force => true do |t|
+    t.integer  "quemador_id"
+    t.integer  "medicion_id"
+    t.integer  "temperatura"
+    t.integer  "presion"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

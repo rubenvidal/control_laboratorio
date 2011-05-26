@@ -1,5 +1,6 @@
 class Quemador < ActiveRecord::Base
   belongs_to :horno
+  has_many :valores
   validates_presence_of :nombre, :cantidad_mecheros, :posicion
   validates_numericality_of :cantidad_mecheros, :only_integer => true
 end

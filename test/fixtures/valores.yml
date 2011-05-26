@@ -1,0 +1,27 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  quemador_id: 1
+  medicion_id: 1
+  temperatura: 1
+  presion: 1
+
+two:
+  quemador_id: 1
+  medicion_id: 1
+  temperatura: 1
+  presion: 1
+
+# == Schema Information
+#
+# Table name: valores
+#
+#  id          :integer         not null, primary key
+#  quemador_id :integer
+#  medicion_id :integer
+#  temperatura :integer
+#  presion     :integer
+#  created_at  :datetime
+#  updated_at  :datetime
+#
+
