@@ -1,0 +1,17 @@
+- title "Hornos"
+
+%table
+  %tr
+    %th Codigo
+    %th Longitud
+    %th Descripcion
+  - for horno in @hornos
+    %tr
+      %td= horno.codigo
+      %td= horno.longitud
+      %td= horno.descripcion
+      %td= link_to 'Show', horno
+      %td= link_to 'Edit', edit_horno_path(horno)
+      %td= link_to 'Destroy', horno, :confirm => 'Are you sure?', :method => :delete
+
+%p= link_to "New Horno", new_horno_path

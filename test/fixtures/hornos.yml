@@ -1,0 +1,9 @@
+one:
+  codigo: MyString
+  longitud: MyString
+  descripcion: MyString
+
+two:
+  codigo: MyString
+  longitud: MyString
+  descripcion: MyString

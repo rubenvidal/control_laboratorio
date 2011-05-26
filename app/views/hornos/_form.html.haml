@@ -1,0 +1,16 @@
+= form_for @horno do |f|
+  = f.error_messages
+  %p
+    = f.label :codigo
+    %br
+    = f.text_field :codigo
+  %p
+    = f.label :longitud
+    %br
+    = f.text_field :longitud
+  %p
+    = f.label :descripcion
+    %br
+    = f.text_field :descripcion
+  %p
+    = f.submit

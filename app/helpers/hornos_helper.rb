@@ -1,0 +1,2 @@
+module HornosHelper
+end

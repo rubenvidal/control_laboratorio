@@ -1,0 +1,18 @@
+- title "Horno"
+
+%p
+  %strong Codigo:
+  = @horno.codigo
+%p
+  %strong Longitud:
+  = @horno.longitud
+%p
+  %strong Descripcion:
+  = @horno.descripcion
+
+%p
+  = link_to "Edit", edit_horno_path(@horno)
+  |
+  = link_to "Destroy", @horno, :confirm => 'Are you sure?', :method => :delete
+  |
+  = link_to "View All", hornos_path
