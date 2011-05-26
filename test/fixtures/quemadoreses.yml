@@ -1,0 +1,13 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  horno_id: 1
+  nombre: MyString
+  cantidad_mecheros: MyString
+  posicion: MyString
+
+two:
+  horno_id: 1
+  nombre: MyString
+  cantidad_mecheros: MyString
+  posicion: MyString
