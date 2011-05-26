@@ -1,0 +1,21 @@
+- title "Medicion"
+
+%p
+  %strong Horno:
+  = @medicion.horno_id
+%p
+  %strong Fecha:
+  = @medicion.fecha
+%p
+  %strong Operario:
+  = @medicion.operario
+%p
+  %strong Velocidad Horno:
+  = @medicion.velocidad_horno
+
+%p
+  = link_to "Edit", edit_medicion_path(@medicion)
+  |
+  = link_to "Destroy", @medicion, :confirm => 'Are you sure?', :method => :delete
+  |
+  = link_to "View All", mediciones_path

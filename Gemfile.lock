@@ -51,6 +51,7 @@ GEM
       mime-types (~> 1.16)
       treetop (~> 1.4.8)
     mime-types (1.16)
+    mocha (0.9.12)
     nested_form (0.1.1)
     nifty-generators (0.4.6)
     polyglot (0.3.1)
@@ -89,6 +90,7 @@ DEPENDENCIES
   haml-rails
   hirb
   jquery-rails (>= 0.2.6)
+  mocha
   nested_form
   nifty-generators
   rails (= 3.0.8.rc1)

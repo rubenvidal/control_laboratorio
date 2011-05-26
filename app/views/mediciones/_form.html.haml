@@ -1,0 +1,20 @@
+= form_for @medicion do |f|
+  = f.error_messages
+  %p
+    = f.label :horno_id
+    %br
+    = f.text_field :horno_id
+  %p
+    = f.label :fecha
+    %br
+    = f.datetime_select :fecha
+  %p
+    = f.label :operario
+    %br
+    = f.text_field :operario
+  %p
+    = f.label :velocidad_horno
+    %br
+    = f.text_field :velocidad_horno
+  %p
+    = f.submit

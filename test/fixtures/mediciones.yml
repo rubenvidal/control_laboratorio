@@ -1,0 +1,25 @@
+one:
+  horno_id: 1
+  fecha: 2011-05-26 16:41:40
+  operario: MyString
+  velocidad_horno: 1
+
+two:
+  horno_id: 1
+  fecha: 2011-05-26 16:41:40
+  operario: MyString
+  velocidad_horno: 1
+
+# == Schema Information
+#
+# Table name: mediciones
+#
+#  id              :integer         not null, primary key
+#  horno_id        :integer
+#  fecha           :datetime
+#  operario        :string(255)
+#  velocidad_horno :integer
+#  created_at      :datetime
+#  updated_at      :datetime
+#
+

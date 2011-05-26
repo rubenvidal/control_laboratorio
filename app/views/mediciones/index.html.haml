@@ -1,0 +1,19 @@
+- title "Mediciones"
+
+%table
+  %tr
+    %th Horno
+    %th Fecha
+    %th Operario
+    %th Velocidad horno
+  - for medicion in @mediciones
+    %tr
+      %td= medicion.horno_id
+      %td= medicion.fecha
+      %td= medicion.operario
+      %td= medicion.velocidad_horno
+      %td= link_to 'Show', medicion
+      %td= link_to 'Edit', edit_medicion_path(medicion)
+      %td= link_to 'Destroy', medicion, :confirm => 'Are you sure?', :method => :delete
+
+%p= link_to "New Medicion", new_medicion_path

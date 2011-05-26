@@ -1,4 +1,6 @@
 ControlLaboratorio::Application.routes.draw do
+  resources :mediciones
+
   resources :hornos
 
   # The priority is based upon order of creation:
