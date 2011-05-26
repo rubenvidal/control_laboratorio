@@ -1,0 +1,6 @@
+Documentos que modificamos al generar una aplicación:
+-gemfile que es donde indicamos las gemas que vamos ha instalar.
+-application.rb -en este cambiamos la configuración horaria idioma.......
+-En el directorio config/locales añadir el archivo es.yml
+-En el directorio config/initializers inflections.rb (este es para poder parchear las pluralizacionesj)
+
