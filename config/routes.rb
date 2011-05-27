@@ -1,11 +1,7 @@
 ControlLaboratorio::Application.routes.draw do
-  resources :mediciones
 
   resources :hornos do
-    member do
-      get :nuevas_mediciones
-      post :crear_mediciones
-    end
+    resources :mediciones
   end
 
   root :to => "hornos#index"

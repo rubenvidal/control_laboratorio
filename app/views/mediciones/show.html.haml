@@ -14,8 +14,8 @@
   = @medicion.velocidad_horno
 
 %p
-  = link_to "Edit", edit_medicion_path(@medicion)
+  = link_to "Edit", edit_horno_medicion_path(@horno, @medicion)
   |
-  = link_to "Destroy", @medicion, :confirm => 'Are you sure?', :method => :delete
+  = link_to "Destroy", [@horno, @medicion], :confirm => 'Are you sure?', :method => :delete
   |
-  = link_to "View All", mediciones_path
+  = link_to "View All", @horno

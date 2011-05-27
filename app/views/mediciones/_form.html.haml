@@ -1,4 +1,4 @@
-= form_for @medicion do |f|
+= form_for ([@horno, @medicion]) do |f|
   = f.error_messages
   %p
     = f.label :horno_id
@@ -16,5 +16,7 @@
     = f.label :velocidad_horno
     %br
     = f.text_field :velocidad_horno
+  = f.fields_for :valores do |valor_fields|
+    = render  'valor_fields', :valor_fields => valor_fields
   %p
     = f.submit
