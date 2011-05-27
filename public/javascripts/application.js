@@ -22,7 +22,7 @@ function addEvent(elm, evType, fn, useCapture) {
 function checkActive() {
 	var a = document.getElementsByTagName("a");
 	if (window.location.href.substr(location.href.length - 1, 1) == '/') {
-		var loc = window.location.href + 'index.html';
+		var loc = window.location.href + '####';
 	}
 	else {
 		var loc = window.location.href;

@@ -1,6 +1,7 @@
 class Valor < ActiveRecord::Base
   belongs_to :mediciones
   belongs_to :quemadores
+  validates_presence_of :temperature, :presion
 end
 
 # == Schema Information

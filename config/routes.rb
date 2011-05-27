@@ -1,7 +1,7 @@
 ControlLaboratorio::Application.routes.draw do
   resources :mediciones
 
-  resources :hornos
+  resources :hornos do
     member do
       get :nuevas_mediciones
       post :crear_mediciones

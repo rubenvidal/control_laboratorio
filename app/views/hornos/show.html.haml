@@ -23,6 +23,9 @@
           %td= quemador.nombre
           %td= quemador.cantidad_mecheros
           %td= quemador.posicion
+#mediciones
+  -#= render @horno.mediciones
+  = render :template => 'mediciones/show', :collection => @horno.mediciones
 %p
   = link_to "Edit", edit_horno_path(@horno)
   |

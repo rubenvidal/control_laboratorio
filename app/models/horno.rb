@@ -1,5 +1,5 @@
 class Horno < ActiveRecord::Base
-  attr_accessible :codigo, :longitud, :descripcion, :quemadores_attributes
+  attr_accessible :codigo, :longitud, :descripcion, :quemadores_attributes, :mediciones_attributes
   has_many :quemadores, :dependent => :destroy
   has_many :mediciones
   accepts_nested_attributes_for :mediciones,

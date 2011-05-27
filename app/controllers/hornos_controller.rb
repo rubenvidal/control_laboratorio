@@ -23,7 +23,16 @@ class HornosController < ApplicationController
   def edit
     @horno = Horno.find(params[:id])
   end
-
+  def nuevas_mediciones
+    @horno = Horno.find(params[:id])
+    @horno.mediciones.build
+    @horno.quemadores.each do |quemador|
+      puts quemador.nombre
+      quemador.valores.build
+    end
+  end
+  def crear_mediciones
+  end
   def update
     @horno = Horno.find(params[:id])
     if @horno.update_attributes(params[:horno])
