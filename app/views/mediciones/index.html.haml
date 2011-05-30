@@ -12,8 +12,8 @@
       %td= medicion.fecha
       %td= medicion.operario
       %td= medicion.velocidad_horno
-      %td= link_to 'Show', medicion
-      %td= link_to 'Edit', edit_medicion_path(medicion)
-      %td= link_to 'Destroy', medicion, :confirm => 'Are you sure?', :method => :delete
+      %td= link_to 'Show', [@horno, medicion]
+      %td= link_to 'Edit', edit_horno_medicion_path(@horno, medicion)
+      %td= link_to 'Destroy', [@horno, medicion], :confirm => 'Estas seguro, esta acción no se podra deshacer?', :method => :delete
 
-%p= link_to "New Medicion", new_medicion_path
+%p= link_to "New Medicion", new_horno_medicion_path(@horno)

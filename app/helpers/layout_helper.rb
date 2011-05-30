@@ -19,4 +19,12 @@ module LayoutHelper
   def javascript(*args)
     content_for(:head) { javascript_include_tag(*args) }
   end
+
+  def enlaces_mediciones
+    resultado = ""
+    Horno.all.each do |horno|
+      resultado << "<li>" + link_to("mediciones #{horno.codigo}", horno_mediciones_path(horno)) + "</li>"
+    end
+    resultado.html_safe
+  end
 end
