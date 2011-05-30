@@ -1,3 +1,4 @@
+#encoding: utf-8
 class MedicionesController < ApplicationController
   before_filter :find_horno
 
@@ -6,7 +7,7 @@ class MedicionesController < ApplicationController
   end
 
   def show
-    @medicion = @horno.mediciones.find(params[:id])
+    @medicion = @horno.mediciones.find(params[:id], :include => {:valores => :quemador})
   end
 
   def new
@@ -39,9 +40,9 @@ class MedicionesController < ApplicationController
   end
 
   def destroy
-    @medicion = Medicion.find(params[:id])
+    @medicion = @horno.mediciones.find(params[:id])
     @medicion.destroy
-    redirect_to mediciones_url, :notice => "Successfully destroyed medicion."
+    redirect_to horno_mediciones_path(@horno), :notice => "La medición ha sido Eliminada."
   end
   private
     def find_horno

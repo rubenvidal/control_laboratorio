@@ -1,21 +1,33 @@
-- title "Medicion"
-
-%p
-  %strong Horno:
-  = @medicion.horno_id
-%p
-  %strong Fecha:
-  = @medicion.fecha
-%p
-  %strong Operario:
-  = @medicion.operario
-%p
-  %strong Velocidad Horno:
-  = @medicion.velocidad_horno
-
-%p
-  = link_to "Edit", edit_horno_medicion_path(@horno, @medicion)
-  |
-  = link_to "Destroy", [@horno, @medicion], :confirm => 'Are you sure?', :method => :delete
-  |
-  = link_to "View All", @horno
+- title "Medición"
+#content_left
+  %p
+    %strong Horno:
+    = @medicion.horno_id
+  %p
+    %strong Fecha:
+    = @medicion.fecha
+  %p
+    %strong Operario:
+    = @medicion.operario
+  %p
+    %strong Velocidad Horno:
+    = @medicion.velocidad_horno
+#content_right
+  #valores
+    %table
+      %thead
+        %tr
+          %th Quemador
+          %th temperatura
+          %th presión
+      %tbody
+        -for valor in @medicion.valores
+          %tr
+            %td= valor.quemador.nombre
+            %td= valor.temperatura
+            %td= valor.presion
+  #enlacebotton
+    = link_to "Modificación", edit_horno_medicion_path(@horno, @medicion)
+    = link_to "Eliminar", [@horno, @medicion], :confirm => 'Are you sure?', :method => :delete
+    = link_to "vista general", horno_mediciones_path(@horno)
+.clear

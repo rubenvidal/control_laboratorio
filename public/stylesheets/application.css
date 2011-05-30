@@ -79,6 +79,16 @@ a {
 .fields input, select {
   width: 150px;
 }
+#enlacebotton a {
+  background: #808080;
+  color: #ffffff;
+  border-radius: 4px;
+  -moz-border-radius: 4px;
+  -webkit-border-radius: 4px;
+  padding: 3px 8px 3px 8px;
+  text-decoration: none;
+  margin-right:10px;
+}
 .fields a {
   background: #808080;
   color: #ffffff;
@@ -103,14 +113,6 @@ html, .main {
 }
 .main {
 	background:url(../images/header_bg.gif) repeat-x center top;
-}
-.clr {
-	clear:both;
-	padding:0;
-	margin:0;
-	width:100%;
-	font-size:0;
-	line-height:0;
 }
 .logo {
 	padding:0;
@@ -162,6 +164,8 @@ a.rm {
 }
 a.com {
 }
+/*******************************************************************/
+/******* region header y menu_nav **********************************/
 .header, .content, .menu_nav, .fbg, .footer, form, ol, ol li, ul, .content .mainbar, .content .sidebar {
 	margin:0;
 	padding:0;
@@ -212,6 +216,9 @@ img.hbg_img {
 	color:#fff;
 	background-color:#2b5c94;
 }
+/**************************************************************/
+/***  region content  *****************************************/
+
 .content {
 }
 .content_in {
@@ -221,6 +228,13 @@ img.hbg_img {
 	background-color:#fff;
 	border:2px solid #e7e7e7;
 	border-top:none;
+}
+#content_left{
+  float: left;
+  width: 350px;
+}
+#content_right{
+  float: left;
 }
 .footer {
 }
@@ -247,4 +261,25 @@ img.hbg_img {
 }
 .footer .rf {
 	float:right;
+}
+/***********************************************************/
+/*************** la clase clear ****************************/
+.clear{
+ clear: both;
+ width: 100%;
+ margin: 0px;
+ padding: 0px;
+}
+/**************************************************************************/
+/********************** tablas ********************************************/
+
+th {
+  background:url(/images/menu.gif) repeat-x center bottom;
+  padding: 0px 8px 0px 8px;
+}
+table {
+  border-spacing: 0px;
+}
+td {
+  text-align: center;
 }

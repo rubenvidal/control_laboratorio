@@ -16,6 +16,7 @@
     = f.label :velocidad_horno
     %br
     = f.text_field :velocidad_horno
+  %p Quemador  |  Temperatura  |  Presíon
   = f.fields_for :valores do |valor_fields|
     = render  'valor_fields', :valor_fields => valor_fields
   %p

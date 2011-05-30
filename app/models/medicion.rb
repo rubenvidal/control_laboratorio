@@ -1,9 +1,9 @@
 class Medicion < ActiveRecord::Base
   belongs_to :horno
-  has_many :valores
+  has_many :valores, :dependent => :destroy
   attr_accessible :horno_id, :fecha, :operario, :velocidad_horno, :valores_attributes
   accepts_nested_attributes_for :valores,
-    :reject_if => lambda { |a| a[:temperatura].blank? }, :allow_destroy => true
+    :reject_if => lambda { |a| a[:quemador_id].blank? }, :allow_destroy => true
 end
 
 # == Schema Information
