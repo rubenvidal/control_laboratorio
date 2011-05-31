@@ -1,0 +1,77 @@
+[33mcommit 7dd2d17f63f37e04c99e74d64c65cf3d0af3bf05[m
+Author: Rubén Vidal <ruben.vidal.castellet@gmail.com>
+Date:   Mon May 30 18:33:39 2011 +0200
+
+    los que no habia borrado
+
+[33mcommit 4a96eedfa58c48ae092fe2f55cf555a8fde70137[m
+Author: Rubén Vidal <ruben.vidal.castellet@gmail.com>
+Date:   Mon May 30 18:32:44 2011 +0200
+
+    trabajos realizados en mediciones y css
+
+[33mcommit 64e78fa9b8ecfc9ed69b1cac190c6e7362a66544[m
+Author: Rubén Vidal <ruben.vidal.castellet@gmail.com>
+Date:   Mon May 30 11:50:49 2011 +0200
+
+    helpers para crear un menu de mediciones por horno
+
+[33mcommit 35567e21c95b295bc5c6c6efd6c3b0c70d985acf[m
+Author: Juanma Cervera <jmcervera@fadrell.com>
+Date:   Sat May 28 10:48:48 2011 +0200
+
+    Ejemplo de fichero database.yml
+
+[33mcommit c1e746ac524b233f9b6b6d44ae0b00e738fc0cad[m
+Author: Juanma Cervera <jmcervera@fadrell.com>
+Date:   Fri May 27 20:33:34 2011 +0200
+
+    Actualización a la última release candidate de Rails.
+
+[33mcommit df0cb3876a111860e137473173e44cb7e2be1f35[m
+Author: Rubén Vidal <ruben.vidal.castellet@gmail.com>
+Date:   Fri May 27 16:21:52 2011 +0200
+
+    instrucciones añadidas al mireadme
+
+[33mcommit 37545edd8277479ea9bbefd630b2172279998be9[m
+Author: Rubén Vidal <ruben.vidal.castellet@gmail.com>
+Date:   Fri May 27 13:32:32 2011 +0200
+
+    mediciones y valores casi acabados falta refinar
+
+[33mcommit 9bd09f92a6b6a5ba6d99e6d66576ff0f2df996cc[m
+Author: Rubén Vidal <ruben.vidal.castellet@gmail.com>
+Date:   Fri May 27 11:19:33 2011 +0200
+
+    mediciones y valores mal iniciado refactorizacion
+
+[33mcommit 392e482ded83a4ce0519a0e227ba23f85a47fc61[m
+Author: Rubén Vidal <ruben.vidal.castellet@gmail.com>
+Date:   Thu May 26 17:53:21 2011 +0200
+
+    crear modelo valores añadir css class active
+
+[33mcommit aa15b966a7b06ebf3b01de6e233e17b5e4aecf77[m
+Author: Rubén Vidal <ruben.vidal.castellet@gmail.com>
+Date:   Thu May 26 16:48:08 2011 +0200
+
+    scaffold de mediciones
+
+[33mcommit 93f09f1c24640a9f78c3d24b9140dc588c41b81a[m
+Author: Rubén Vidal <ruben.vidal.castellet@gmail.com>
+Date:   Thu May 26 15:49:57 2011 +0200
+
+    Creado modelo quemador puesta en marcha de relacion, layout y css layout
+
+[33mcommit cb8cf383c3cc74fc2b36449c7ab91c921b66a462[m
+Author: Rubén Vidal <ruben.vidal.castellet@gmail.com>
+Date:   Thu May 26 12:13:54 2011 +0200
+
+    creado scaffold de horno
+
+[33mcommit 6a4bfc750f227b2d28b8c7f000ef5e3bbcf03854[m
+Author: Rubén Vidal <ruben.vidal.castellet@gmail.com>
+Date:   Thu May 26 12:07:50 2011 +0200
+
+    aplicacion inicial

@@ -79,9 +79,12 @@ a {
 .fields input, select {
   width: 150px;
 }
+/*****************************************************************/
+/***************** Botones ***************************************/
 #enlacebotton a {
-  background: #808080;
+  background: #B0B0B0;
   color: #ffffff;
+  border: 2px ridge #808080;
   border-radius: 4px;
   -moz-border-radius: 4px;
   -webkit-border-radius: 4px;
@@ -89,9 +92,22 @@ a {
   text-decoration: none;
   margin-right:10px;
 }
+#enlacebotton a:active {
+  font-size: 13px;
+}
+#enlacebotton a:hover {
+  background: #909090;
+}
+.fields a:active {
+  font-size: 13px;
+}
+.fields a:hover {
+  background: #909090;
+}
 .fields a {
-  background: #808080;
+  background: #B0B0B0;
   color: #ffffff;
+  border: 2px ridge #808080;
   border-radius: 4px;
   -moz-border-radius: 4px;
   -webkit-border-radius: 4px;

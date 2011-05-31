@@ -3,7 +3,7 @@ class MedicionesController < ApplicationController
   before_filter :find_horno
 
   def index
-    @mediciones = @horno.mediciones
+    @mediciones = @horno.mediciones.order('fecha desc')
   end
 
   def show

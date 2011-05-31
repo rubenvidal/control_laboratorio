@@ -23,9 +23,7 @@
           %td= quemador.nombre
           %td= quemador.cantidad_mecheros
           %td= quemador.posicion
-%p
-  = link_to "Edit", edit_horno_path(@horno)
-  |
-  = link_to "Destroy", @horno, :confirm => 'Are you sure?', :method => :delete
-  |
-  = link_to "View All", hornos_path
+#enlacebotton
+  = link_to "Modificación", edit_horno_path(@horno)
+  = link_to "Eliminar", @horno, :confirm => '¿Estas seguro? Esta acción no se podra deshacer', :method => :delete
+  = link_to "Vista hornos", hornos_path
