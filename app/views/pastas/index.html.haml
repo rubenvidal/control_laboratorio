@@ -1,0 +1,17 @@
+- title "Pastas"
+
+%table
+  %tr
+    %th Codigo
+    %th Tipo tierra
+    %th Descripcion
+  - for pasta in @pastas
+    %tr
+      %td= pasta.codigo
+      %td= pasta.tipo_tierra
+      %td= pasta.descripcion
+      %td= link_to 'Show', pasta
+      %td= link_to 'Edit', edit_pasta_path(pasta)
+      %td= link_to 'Destroy', pasta, :confirm => 'Are you sure?', :method => :delete
+
+%p= link_to "New Pasta", new_pasta_path

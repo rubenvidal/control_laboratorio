@@ -1,0 +1,16 @@
+= form_for @pasta do |f|
+  = f.error_messages
+  %p
+    = f.label :codigo
+    %br
+    = f.text_field :codigo
+  %p
+    = f.label :tipo_tierra
+    %br
+    = f.text_field :tipo_tierra
+  %p
+    = f.label :descripcion
+    %br
+    = f.text_field :descripcion
+  %p
+    = f.submit

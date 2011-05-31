@@ -1,0 +1,2 @@
+module PastasHelper
+end

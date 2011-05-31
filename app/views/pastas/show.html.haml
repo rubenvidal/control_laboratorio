@@ -1,0 +1,18 @@
+- title "Pasta"
+
+%p
+  %strong Codigo:
+  = @pasta.codigo
+%p
+  %strong Tipo Tierra:
+  = @pasta.tipo_tierra
+%p
+  %strong Descripcion:
+  = @pasta.descripcion
+
+%p
+  = link_to "Edit", edit_pasta_path(@pasta)
+  |
+  = link_to "Destroy", @pasta, :confirm => 'Are you sure?', :method => :delete
+  |
+  = link_to "View All", pastas_path

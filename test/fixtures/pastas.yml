@@ -1,0 +1,9 @@
+one:
+  codigo: MyString
+  tipo_tierra: MyString
+  descripcion: MyString
+
+two:
+  codigo: MyString
+  tipo_tierra: MyString
+  descripcion: MyString

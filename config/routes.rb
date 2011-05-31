@@ -1,5 +1,7 @@
 ControlLaboratorio::Application.routes.draw do
 
+  resources :pastas
+
   resources :hornos do
     resources :mediciones
   end

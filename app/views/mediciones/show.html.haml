@@ -5,7 +5,7 @@
     = @medicion.horno_id
   %p
     %strong Fecha:
-    = @medicion.fecha
+    = l @medicion.fecha, :format => :long
   %p
     %strong Operario:
     = @medicion.operario
