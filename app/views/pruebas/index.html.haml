@@ -1,17 +1,17 @@
 - title "Pruebas"
-
-%table
-  %tr
-    %th Pasta
-    %th Fecha
-    %th Partida
-  - for prueba in @pruebas
+#enlacebotton
+  %table
     %tr
-      %td= prueba.pasta_id
-      %td= prueba.fecha
-      %td= prueba.partida
-      %td= link_to 'Show', prueba
-      %td= link_to 'Edit', edit_prueba_path(prueba)
-      %td= link_to 'Destroy', prueba, :confirm => 'Are you sure?', :method => :delete
+      %th Pasta
+      %th Fecha
+      %th Partida
+    - for prueba in @pruebas
+      %tr
+        %td= prueba.pasta_id
+        %td= prueba.fecha
+        %td= prueba.partida
+        %td= link_to 'Vista prueba', [@pasta, prueba]
+        %td= link_to 'Modificar', edit_pasta_prueba_path(@pasta,     prueba)
+        %td= link_to 'Eliminar', [@pasta, prueba], :confirm => 'Are you sure?', :method => :delete
 
-%p= link_to "New Prueba", new_prueba_path
+  %p= link_to "Nueva Prueba", new_pasta_prueba_path(@pasta)

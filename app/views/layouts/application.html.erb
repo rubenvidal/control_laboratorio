@@ -18,7 +18,10 @@
           <div class="menu_nav">
             <ul>
               <%= enlaces_mediciones %>
-              <li><%= link_to 'hornos', hornos_path %></li>
+              <li><%= menu_item 'Hornos', hornos_path %></li>
+              <li><%= menu_item 'Pastas', pastas_path %></li>
+              <li><%= menu_item 'Productos', productos_path %></li>
+              <li><%= menu_item 'Proveedores', proveedores_path %></li>
               <li><a href="#">Usuarios</a></li>
             </ul>
             <div class="clear"></div>

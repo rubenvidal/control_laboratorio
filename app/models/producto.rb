@@ -1,4 +1,6 @@
 class Producto < ActiveRecord::Base
+  has_many :composiciones, :dependent => :destroy
+  belongs_to :proveedor
   attr_accessible :proveedor_id, :referencia, :caracteristica
 end
 

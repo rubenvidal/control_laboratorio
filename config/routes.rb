@@ -1,14 +1,14 @@
 ControlLaboratorio::Application.routes.draw do
 
-  resources :composiciones
+  #resources :composiciones
 
   resources :productos
 
-  resources :pruebas
-
   resources :proveedores
 
-  resources :pastas
+  resources :pastas do
+   resources :pruebas
+  end
 
   resources :hornos do
     resources :mediciones

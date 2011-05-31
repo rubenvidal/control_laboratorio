@@ -10,9 +10,7 @@
   %strong Partida:
   = @prueba.partida
 
-%p
-  = link_to "Edit", edit_prueba_path(@prueba)
-  |
-  = link_to "Destroy", @prueba, :confirm => 'Are you sure?', :method => :delete
-  |
-  = link_to "View All", pruebas_path
+#enlacebotton
+  = link_to "Edit", edit_pasta_prueba_path(@pasta, @prueba)
+  = link_to "Destroy",[@pasta, @prueba], :confirm => 'Are you sure?', :method => :delete
+  = link_to "View All", pasta_pruebas_path(@pasta)

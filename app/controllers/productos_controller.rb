@@ -1,4 +1,5 @@
 class ProductosController < ApplicationController
+  before_filter :establecer_tab
   def index
     @productos = Producto.all
   end
@@ -37,5 +38,9 @@ class ProductosController < ApplicationController
     @producto = Producto.find(params[:id])
     @producto.destroy
     redirect_to productos_url, :notice => "Successfully destroyed producto."
+  end
+  private
+  def establecer_tab
+    @tab = "Productos"
   end
 end

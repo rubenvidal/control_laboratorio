@@ -1,4 +1,4 @@
-= form_for @prueba do |f|
+= form_for ([@pasta, @prueba]) do |f|
   = f.error_messages
   %p
     = f.label :pasta_id

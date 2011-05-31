@@ -1,6 +1,5 @@
 class CreateProductos < ActiveRecord::Migration
   def self.up
-    drop_table :productos
     create_table :productos do |t|
       t.integer :proveedor_id
       t.string :referencia

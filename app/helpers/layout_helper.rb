@@ -23,8 +23,16 @@ module LayoutHelper
   def enlaces_mediciones
     resultado = ""
     Horno.all.each do |horno|
-      resultado << "<li>" + link_to("mediciones #{horno.codigo}", horno_mediciones_path(horno)) + "</li>"
+      resultado << "<li>" + menu_item("Mediciones #{horno.codigo}", horno_mediciones_path(horno)) + "</li>"
     end
     resultado.html_safe
+  end
+
+  def menu_item(texto, ruta)
+    if @tab == texto
+      link_to texto, ruta, :class => "active"
+    else
+      link_to texto, ruta
+    end
   end
 end

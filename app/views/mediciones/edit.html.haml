@@ -1,7 +1,7 @@
-- title "Edit Medicion"
+- title "Modificar Medicion"
 
 = render 'form'
 
 #enlacebotton
   = link_to "Vista", [@horno, @medicion]
-  = link_to "Vista general", @horno
+  = link_to "Vista general", horno_mediciones_path(@horno)

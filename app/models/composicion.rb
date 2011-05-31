@@ -1,4 +1,6 @@
 class Composicion < ActiveRecord::Base
+  belongs_to :producto
+  belongs_to :prueba
   attr_accessible :prueba_id, :producto_id, :porcentaje, :comentario
 end
 

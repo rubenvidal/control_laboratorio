@@ -1,5 +1,6 @@
 class Pasta < ActiveRecord::Base
-  attr_accessible :codigo, :tipo_tierra, :descripcion
+  has_many :pruebas, :dependent => :destroy
+  attr_accessible :codigo, :tipo_tierra, :descripcion, :pruebas_attributes
 end
 
 # == Schema Information

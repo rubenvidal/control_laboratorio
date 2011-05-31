@@ -10,9 +10,7 @@
   %strong Descripcion:
   = @pasta.descripcion
 
-%p
-  = link_to "Edit", edit_pasta_path(@pasta)
-  |
-  = link_to "Destroy", @pasta, :confirm => 'Are you sure?', :method => :delete
-  |
-  = link_to "View All", pastas_path
+#enlacebotton
+  = link_to "Modificar", edit_pasta_path(@pasta)
+  = link_to "Eliminar", @pasta, :confirm => '¿Estas seguro? Esta acción no se puede deshacer', :method => :delete
+  = link_to "Vista general", pastas_path

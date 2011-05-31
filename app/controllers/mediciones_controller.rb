@@ -1,6 +1,7 @@
 #encoding: utf-8
 class MedicionesController < ApplicationController
   before_filter :find_horno
+  before_filter :establecer_tab
 
   def index
     @mediciones = @horno.mediciones.order('fecha desc')
@@ -48,4 +49,7 @@ class MedicionesController < ApplicationController
     def find_horno
       @horno = Horno.find(params[:horno_id])
     end
+  def establecer_tab
+    @tab = "Mediciones #{@horno.codigo}"
+  end
 end

@@ -1,8 +1,7 @@
-- title "Edit Prueba"
+- title "Modificar Prueba"
 
 = render 'form'
 
-%p
-  = link_to "Show", @prueba
-  |
-  = link_to "View All", pruebas_path
+#enlacebotton
+  = link_to "Vista", [@pasta, @prueba]
+  = link_to "Vista general", pasta_pruebas_path(@pasta)

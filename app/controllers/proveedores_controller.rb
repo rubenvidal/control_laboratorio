@@ -1,4 +1,5 @@
 class ProveedoresController < ApplicationController
+  before_filter :establecer_tab
   def index
     @proveedores = Proveedor.all
   end
@@ -37,5 +38,9 @@ class ProveedoresController < ApplicationController
     @proveedor = Proveedor.find(params[:id])
     @proveedor.destroy
     redirect_to proveedores_url, :notice => "Successfully destroyed proveedor."
+  end
+  private
+  def establecer_tab
+    @tab = "Proveedores"
   end
 end

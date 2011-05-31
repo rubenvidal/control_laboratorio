@@ -1,4 +1,5 @@
 class Proveedor < ActiveRecord::Base
+  has_many :productos
   attr_accessible :codigo_proveedor, :telefono, :direccion, :contacto
 end
 

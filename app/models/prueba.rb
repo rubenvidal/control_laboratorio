@@ -1,4 +1,6 @@
 class Prueba < ActiveRecord::Base
+  belongs_to :pasta
+  has_many :composiciones, :dependent => :destroy
   attr_accessible :pasta_id, :fecha, :partida
 end
 

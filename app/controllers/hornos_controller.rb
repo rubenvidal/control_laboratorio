@@ -1,4 +1,6 @@
 class HornosController < ApplicationController
+  before_filter :establecer_tab
+
   def index
     @hornos = Horno.all
   end
@@ -37,5 +39,10 @@ class HornosController < ApplicationController
     @horno = Horno.find(params[:id])
     @horno.destroy
     redirect_to hornos_url, :notice => "Successfully destroyed horno."
+  end
+
+  private
+  def establecer_tab
+    @tab = "Hornos"
   end
 end

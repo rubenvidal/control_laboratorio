@@ -1,4 +1,5 @@
 class PastasController < ApplicationController
+  before_filter :establecer_tab
   def index
     @pastas = Pasta.all
   end
@@ -37,5 +38,9 @@ class PastasController < ApplicationController
     @pasta = Pasta.find(params[:id])
     @pasta.destroy
     redirect_to pastas_url, :notice => "Successfully destroyed pasta."
+  end
+  private
+  def establecer_tab
+    @tab = "Pastas"
   end
 end
