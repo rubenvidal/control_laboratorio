@@ -1,0 +1,25 @@
+one:
+  codigo_proveedor: MyString
+  telefono: MyString
+  direccion: MyString
+  contacto: MyString
+
+two:
+  codigo_proveedor: MyString
+  telefono: MyString
+  direccion: MyString
+  contacto: MyString
+
+# == Schema Information
+#
+# Table name: proveedores
+#
+#  id               :integer         not null, primary key
+#  codigo_proveedor :string(255)
+#  telefono         :string(255)
+#  direccion        :string(255)
+#  contacto         :string(255)
+#  created_at       :datetime
+#  updated_at       :datetime
+#
+

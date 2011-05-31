@@ -1,0 +1,16 @@
+= form_for @prueba do |f|
+  = f.error_messages
+  %p
+    = f.label :pasta_id
+    %br
+    = f.text_field :pasta_id
+  %p
+    = f.label :fecha
+    %br
+    = f.datetime_select :fecha
+  %p
+    = f.label :partida
+    %br
+    = f.text_field :partida
+  %p
+    = f.submit

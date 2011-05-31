@@ -1,0 +1,25 @@
+one:
+  prueba_id: 1
+  producto_id: 1
+  porcentaje: 1
+  comentario: MyString
+
+two:
+  prueba_id: 1
+  producto_id: 1
+  porcentaje: 1
+  comentario: MyString
+
+# == Schema Information
+#
+# Table name: composiciones
+#
+#  id          :integer         not null, primary key
+#  prueba_id   :integer
+#  producto_id :integer
+#  porcentaje  :integer
+#  comentario  :string(255)
+#  created_at  :datetime
+#  updated_at  :datetime
+#
+

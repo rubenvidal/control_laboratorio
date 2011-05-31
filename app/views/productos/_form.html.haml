@@ -1,0 +1,16 @@
+= form_for @producto do |f|
+  = f.error_messages
+  %p
+    = f.label :proveedor_id
+    %br
+    = f.text_field :proveedor_id
+  %p
+    = f.label :referencia
+    %br
+    = f.text_field :referencia
+  %p
+    = f.label :caracteristica
+    %br
+    = f.text_field :caracteristica
+  %p
+    = f.submit

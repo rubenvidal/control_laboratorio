@@ -1,0 +1,22 @@
+one:
+  proveedor_id: 1
+  referencia: MyString
+  caracteristica: MyString
+
+two:
+  proveedor_id: 1
+  referencia: MyString
+  caracteristica: MyString
+
+# == Schema Information
+#
+# Table name: productos
+#
+#  id             :integer         not null, primary key
+#  proveedor_id   :integer
+#  referencia     :string(255)
+#  caracteristica :string(255)
+#  created_at     :datetime
+#  updated_at     :datetime
+#
+

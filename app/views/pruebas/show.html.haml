@@ -1,0 +1,18 @@
+- title "Prueba"
+
+%p
+  %strong Pasta:
+  = @prueba.pasta_id
+%p
+  %strong Fecha:
+  = @prueba.fecha
+%p
+  %strong Partida:
+  = @prueba.partida
+
+%p
+  = link_to "Edit", edit_prueba_path(@prueba)
+  |
+  = link_to "Destroy", @prueba, :confirm => 'Are you sure?', :method => :delete
+  |
+  = link_to "View All", pruebas_path

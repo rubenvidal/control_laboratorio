@@ -1,0 +1,17 @@
+- title "Pruebas"
+
+%table
+  %tr
+    %th Pasta
+    %th Fecha
+    %th Partida
+  - for prueba in @pruebas
+    %tr
+      %td= prueba.pasta_id
+      %td= prueba.fecha
+      %td= prueba.partida
+      %td= link_to 'Show', prueba
+      %td= link_to 'Edit', edit_prueba_path(prueba)
+      %td= link_to 'Destroy', prueba, :confirm => 'Are you sure?', :method => :delete
+
+%p= link_to "New Prueba", new_prueba_path

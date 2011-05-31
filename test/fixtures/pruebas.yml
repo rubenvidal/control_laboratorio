@@ -1,0 +1,22 @@
+one:
+  pasta_id: 1
+  fecha: 2011-05-31 15:09:53
+  partida: MyString
+
+two:
+  pasta_id: 1
+  fecha: 2011-05-31 15:09:53
+  partida: MyString
+
+# == Schema Information
+#
+# Table name: pruebas
+#
+#  id         :integer         not null, primary key
+#  pasta_id   :integer
+#  fecha      :datetime
+#  partida    :string(255)
+#  created_at :datetime
+#  updated_at :datetime
+#
+
