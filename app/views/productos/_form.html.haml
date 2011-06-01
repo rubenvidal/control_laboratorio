@@ -3,7 +3,7 @@
   %p
     = f.label :proveedor_id
     %br
-    = f.text_field :proveedor_id
+    = select("producto", "proveedor_id", Proveedor.all.collect {|p| [p.codigo_proveedor, p.id]}, {:prompt => 'proveedores'})
   %p
     = f.label :referencia
     %br

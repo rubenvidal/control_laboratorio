@@ -1,4 +1,4 @@
-= form_for ([@pasta, @prueba]) do |f|
+= form_for [@pasta, @prueba] do |f|
   = f.error_messages
   %p
     = f.label :pasta_id
@@ -12,5 +12,9 @@
     = f.label :partida
     %br
     = f.text_field :partida
+  #enlacebotton
+    - f.fields_for :composiciones do |builder|
+      =render 'composicion_fields', :f => builder
+    -#= f.link_to_add "Añade un producto", :composiciones
   %p
     = f.submit
