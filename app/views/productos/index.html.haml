@@ -7,7 +7,7 @@
     %th Caracteristica
   - for producto in @productos
     %tr
-      %td= producto.proveedor_id
+      %td= producto.proveedor.codigo_proveedor
       %td= producto.referencia
       %td= producto.caracteristica
       %td= link_to 'Show', producto

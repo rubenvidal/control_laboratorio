@@ -1,16 +1,30 @@
-- title "Prueba"
+- title "Prueba #{@pasta.codigo}"
+#content_left
+  %p
+    %strong Pasta:
+    = @prueba.pasta_id
+  %p
+    %strong Fecha:
+    = l @prueba.fecha, :format => :long
+  %p
+    %strong Partida:
+    = @prueba.partida
+#content_right
+  %table
+    %thead
+      %tr
+        %th Producto
+        %th Porcentaje
+        %th comentario
+    %tbody
+      -for composicion in @prueba.composiciones
+        %tr
+          %td= composicion.producto.referencia
+          %td= composicion.porcentaje
+          %td= composicion.comentario
+  #enlacebotton
+    = link_to "Edit", edit_pasta_prueba_path(@pasta, @prueba)
+    = link_to "Destroy",[@pasta, @prueba], :confirm => 'Are you sure?', :method => :delete
+    = link_to "View All", pasta_pruebas_path(@pasta)
+.clear
 
-%p
-  %strong Pasta:
-  = @prueba.pasta_id
-%p
-  %strong Fecha:
-  = @prueba.fecha
-%p
-  %strong Partida:
-  = @prueba.partida
-
-#enlacebotton
-  = link_to "Edit", edit_pasta_prueba_path(@pasta, @prueba)
-  = link_to "Destroy",[@pasta, @prueba], :confirm => 'Are you sure?', :method => :delete
-  = link_to "View All", pasta_pruebas_path(@pasta)

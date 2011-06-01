@@ -1,7 +1,8 @@
 class Prueba < ActiveRecord::Base
   belongs_to :pasta
   has_many :composiciones, :dependent => :destroy
-  attr_accessible :pasta_id, :fecha, :partida
+  attr_accessible :pasta_id, :fecha, :partida, :composiciones_attributes
+  accepts_nested_attributes_for :composiciones, :reject_if => lambda { |a| a[:porcentaje].blank?}, :allow_destroy => true
 end
 
 # == Schema Information

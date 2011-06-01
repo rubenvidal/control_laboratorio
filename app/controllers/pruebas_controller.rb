@@ -12,6 +12,7 @@ class PruebasController < ApplicationController
 
   def new
     @prueba = @pasta.pruebas.new
+    find_productos
   end
 
   def create
@@ -19,12 +20,14 @@ class PruebasController < ApplicationController
     if @prueba.save
       redirect_to [@pasta, @prueba], :notice => "La creación de la prueba se ejuto con exito."
     else
+      find_productos
       render :action => 'new'
     end
   end
 
   def edit
     @prueba = @pasta.pruebas.find(params[:id])
+    find_productos
   end
 
   def update
@@ -32,6 +35,7 @@ class PruebasController < ApplicationController
     if @prueba.update_attributes(params[:prueba])
       redirect_to [@pasta, @prueba], :notice  => "Successfully updated prueba."
     else
+      find_productos
       render :action => 'edit'
     end
   end
@@ -47,6 +51,9 @@ class PruebasController < ApplicationController
     end
     def establecer_tab
       @tab = "Pastas"
+    end
+    def find_productos
+      @productos = Producto.all.collect {|p| [p.referencia, p.id]}
     end
 
 end

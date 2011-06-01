@@ -8,7 +8,7 @@
     - for prueba in @pruebas
       %tr
         %td= prueba.pasta_id
-        %td= prueba.fecha
+        %td= l prueba.fecha, :format => :long
         %td= prueba.partida
         %td= link_to 'Vista prueba', [@pasta, prueba]
         %td= link_to 'Modificar', edit_pasta_prueba_path(@pasta,     prueba)

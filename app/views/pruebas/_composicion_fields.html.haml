@@ -1,8 +1,5 @@
-= f.label :prueba_id
-= f.text_field :prueba_id
-%br
 = f.label :producto_id
-= f.text_field :producto_id
+= f.select(:producto_id, @productos , {:prompt => 'productos'})
 %br
 = f.label :porcentaje
 = f.text_field :porcentaje
