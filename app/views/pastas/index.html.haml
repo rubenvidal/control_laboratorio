@@ -1,18 +1,22 @@
 - title "Pastas"
-#enlacebotton
-  %table
+%table
+  %thead
     %tr
       %th Codigo
       %th Tipo tierra
       %th Descripcion
+      %th pruebas
+  %tbody
     - for pasta in @pastas
-      %tr
-        %td= pasta.codigo
+      %tr{:class => cycle("even","odd")}
+        %td= link_to pasta.codigo, pasta
         %td= pasta.tipo_tierra
         %td= pasta.descripcion
-        %td= link_to 'Vista', pasta
-        %td= link_to 'Nueva prueba', new_pasta_prueba_path(pasta)
+        %td= link_to "Total #{pasta.pruebas.size}", pasta_pruebas_path(pasta)
+        -#%td= link_to 'vista', pasta
+        %td.enlacebotton= link_to 'nueva prueba', new_pasta_prueba_path(pasta)
+        -#%td= link_to 'Pruebas de la pasta', pasta_pruebas_path(pasta)
         -#%td= link_to 'Modificar', edit_pasta_path(pasta)
         -#%td= link_to 'Eliminar', pasta, :confirm => '¿Estas seguro? esta acción no se puede deshacer', :method => :delete
-
+#enlacebotton
   %p= link_to "Nueva Pasta", new_pasta_path

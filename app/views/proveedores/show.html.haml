@@ -1,21 +1,24 @@
 - title "Proveedor"
 
 %p
-  %strong Codigo Proveedor:
+  %strong.vista Codigo Proveedor:
   = @proveedor.codigo_proveedor
 %p
-  %strong Telefono:
+  %strong.vista Nombre:
+  = @proveedor.nombre
+%p
+  %strong.vista Cif:
+  = @proveedor.cif
+%p
+  %strong.vista Telefono:
   = @proveedor.telefono
 %p
-  %strong Direccion:
+  %strong.vista Direccion:
   = @proveedor.direccion
 %p
-  %strong Contacto:
+  %strong.vista Contacto:
   = @proveedor.contacto
 
-%p
-  = link_to "Edit", edit_proveedor_path(@proveedor)
-  |
-  = link_to "Destroy", @proveedor, :confirm => 'Are you sure?', :method => :delete
-  |
-  = link_to "View All", proveedores_path
+.clear
+#enlacebotton
+  = link_to "Proveedores", proveedores_path

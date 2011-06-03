@@ -1,20 +1,23 @@
 = form_for @proveedor do |f|
   = f.error_messages
-  %p
-    = f.label :codigo_proveedor
-    %br
-    = f.text_field :codigo_proveedor
-  %p
-    = f.label :telefono
-    %br
-    = f.text_field :telefono
-  %p
-    = f.label :direccion
-    %br
-    = f.text_field :direccion
-  %p
-    = f.label :contacto
-    %br
-    = f.text_field :contacto
+  %ol
+    %li
+      = f.label :codigo_proveedor
+      = f.text_field :codigo_proveedor
+    %li
+      = f.label :nombre
+      = f.text_field :nombre
+    %li
+      = f.label :cif
+      = f.text_field :cif
+    %li
+      = f.label :telefono
+      = f.text_field :telefono
+    %li
+      = f.label :direccion
+      = f.text_field :direccion
+    %li
+      = f.label :contacto
+      = f.text_field :contacto
   %p
     = f.submit

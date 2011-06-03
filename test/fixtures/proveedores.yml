@@ -10,6 +10,8 @@ two:
   direccion: MyString
   contacto: MyString
 
+
+
 # == Schema Information
 #
 # Table name: proveedores
@@ -21,5 +23,7 @@ two:
 #  contacto         :string(255)
 #  created_at       :datetime
 #  updated_at       :datetime
+#  nombre           :string(255)
+#  cif              :string(255)
 #
 

@@ -1,7 +1,10 @@
 class Proveedor < ActiveRecord::Base
   has_many :productos
-  attr_accessible :codigo_proveedor, :telefono, :direccion, :contacto
+  attr_accessible :codigo_proveedor, :telefono, :direccion, :contacto, :nombre, :cif
+  validates_presence_of :codigo_proveedor, :telefono, :direccion, :nombre, :cif
 end
+
+
 
 # == Schema Information
 #
@@ -14,5 +17,7 @@ end
 #  contacto         :string(255)
 #  created_at       :datetime
 #  updated_at       :datetime
+#  nombre           :string(255)
+#  cif              :string(255)
 #
 

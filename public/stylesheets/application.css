@@ -37,6 +37,13 @@ a {
   border: solid 1px #C66;
 }
 
+.field_with_errors{
+  color: red;
+}
+.field_with_errors input{
+  border: 2px solid red;
+}
+
 .fieldWithErrors {
   display: inline;
 }
@@ -67,6 +74,7 @@ a {
 
 .error_messages ul {
   margin: 0;
+  margin-left: 25px;
 }
 #quema td {
   width: 150px;
@@ -81,7 +89,7 @@ a {
 }
 /*****************************************************************/
 /***************** Botones ***************************************/
-#enlacebotton a {
+.enlacebotton a {
   background: #B0B0B0;
   color: #ffffff;
   border: 2px ridge #808080;
@@ -90,7 +98,25 @@ a {
   -webkit-border-radius: 4px;
   padding: 3px 8px 3px 8px;
   text-decoration: none;
-  margin-right:10px;
+  margin-top: 20px;
+  margin: 3px 10px 3px 3px;
+}
+.enlacebotton a:active {
+  font-size: 13px;
+}
+.enlacebotton a:hover {
+  background: #909090;
+}#enlacebotton a {
+  background: #B0B0B0;
+  color: #ffffff;
+  border: 2px ridge #808080;
+  border-radius: 4px;
+  -moz-border-radius: 4px;
+  -webkit-border-radius: 4px;
+  padding: 3px 8px 3px 8px;
+  text-decoration: none;
+  margin-top: 20px;
+  margin: 3px 10px 3px 3px;
 }
 #enlacebotton a:active {
   font-size: 13px;
@@ -113,6 +139,7 @@ a {
   -webkit-border-radius: 4px;
   padding: 3px 8px 3px 8px;
   text-decoration: none;
+  margin: 3px 10px 3px 3px;
 }
 
 body {
@@ -294,8 +321,33 @@ th {
   padding: 0px 8px 0px 8px;
 }
 table {
+  margin: auto;
   border-spacing: 0px;
 }
 td {
   text-align: center;
+  padding: 5px 8px 3px 8px;
+}
+tr.odd {
+	background: #E4E7E7;
+}
+/********************************************************************/
+/***************  formularios **************************************/
+
+ol li label {
+  text-align: left;
+  width: 20%;
+  display: block;
+  float: left;
+}
+li{
+  list-style: none;
+}
+/*****************************************************************/
+/************* vistas   ******************************************/
+
+.vista{
+  display: block;
+  float: left;
+  width: 16%;
 }

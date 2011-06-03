@@ -3,17 +3,20 @@
 %table
   %tr
     %th Codigo proveedor
+    %th Nombre
+    %th Cif
     %th Telefono
     %th Direccion
     %th Contacto
   - for proveedor in @proveedores
     %tr
-      %td= proveedor.codigo_proveedor
+      %td= link_to proveedor.codigo_proveedor, proveedor
+      %td= proveedor.nombre
+      %td= proveedor.cif
       %td= proveedor.telefono
       %td= proveedor.direccion
       %td= proveedor.contacto
-      %td= link_to 'Show', proveedor
-      %td= link_to 'Edit', edit_proveedor_path(proveedor)
-      %td= link_to 'Destroy', proveedor, :confirm => 'Are you sure?', :method => :delete
-
-%p= link_to "New Proveedor", new_proveedor_path
+      %td.enlacebotton= link_to 'Modifica', edit_proveedor_path(proveedor)
+      -#%td.enlacebotton= link_to 'Destroy', proveedor, :confirm => 'Are you sure?', :method => :delete
+#enlacebotton
+  %p= link_to "Nuevo Proveedor", new_proveedor_path

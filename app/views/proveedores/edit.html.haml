@@ -1,8 +1,7 @@
-- title "Edit Proveedor"
+- title "Modificación Proveedor"
 
 = render 'form'
 
-%p
-  = link_to "Show", @proveedor
-  |
-  = link_to "View All", proveedores_path
+#enlacebotton
+  = link_to 'Elimina', @proveedor, :confirm => '¿Estas seguro? Esta acción no se podra deshacer.', :method => :delete
+  = link_to "Proveedores", proveedores_path

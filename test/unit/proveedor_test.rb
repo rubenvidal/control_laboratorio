@@ -6,6 +6,8 @@ class ProveedorTest < ActiveSupport::TestCase
   end
 end
 
+
+
 # == Schema Information
 #
 # Table name: proveedores
@@ -17,5 +19,7 @@ end
 #  contacto         :string(255)
 #  created_at       :datetime
 #  updated_at       :datetime
+#  nombre           :string(255)
+#  cif              :string(255)
 #
 

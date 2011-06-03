@@ -6,7 +6,7 @@
       %th Fecha
       %th Partida
     - for prueba in @pruebas
-      %tr
+      %tr{:class => cycle("","odd")}
         %td= prueba.pasta_id
         %td= l prueba.fecha, :format => :long
         %td= prueba.partida

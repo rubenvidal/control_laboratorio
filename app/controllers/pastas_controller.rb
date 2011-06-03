@@ -1,7 +1,7 @@
 class PastasController < ApplicationController
   before_filter :establecer_tab
   def index
-    @pastas = Pasta.all
+    @pastas = Pasta.all(:include => :pruebas)
   end
 
   def show
