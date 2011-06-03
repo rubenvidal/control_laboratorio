@@ -1,16 +1,14 @@
 = form_for @producto do |f|
   = f.error_messages
-  %p
-    = f.label :proveedor_id
-    %br
-    = select("producto", "proveedor_id", Proveedor.all.collect {|p| [p.codigo_proveedor, p.id]}, {:prompt => 'proveedores'})
-  %p
-    = f.label :referencia
-    %br
-    = f.text_field :referencia
-  %p
-    = f.label :caracteristica
-    %br
-    = f.text_field :caracteristica
-  %p
-    = f.submit
+  %ol
+    %li
+      = f.label :proveedor_id
+      = select("producto", "proveedor_id", Proveedor.all.collect {|p| [p.nombre, p.id]}, {:prompt => '--proveedores--'})
+    %li
+      = f.label :referencia
+      = f.text_field :referencia
+    %li
+      = f.label :caracteristica
+      = f.text_field :caracteristica
+    %li
+      = f.submit

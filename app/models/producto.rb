@@ -2,6 +2,7 @@ class Producto < ActiveRecord::Base
   has_many :composiciones
   belongs_to :proveedor
   attr_accessible :proveedor_id, :referencia, :caracteristica
+  validates_presence_of :proveedor_id, :referencia, :caracteristica
 end
 
 # == Schema Information
