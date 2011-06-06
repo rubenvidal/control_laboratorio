@@ -4,4 +4,5 @@ Documentos que modificamos al generar una aplicación:
 -En el directorio config/locales añadir el archivo es.yml
 -En el directorio config/initializers inflections.rb (este es para poder parchear las pluralizacionesj)
 -Si trasladamos un proyecto debemos realizar un rake db:migrate para que las tablas se generen sino no ha ido el proyecto al trasladarlo ademas del fichero database.yml que se copia o crea porque no estaba en el repositorio.
+-En este proyecto en la creacion de composiciones he creado todos los recursos cuando no necesito ninguno pero no los he eliminado de momento.
 

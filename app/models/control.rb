@@ -1,5 +1,6 @@
 class Control < ActiveRecord::Base
   belongs_to :prueba
+  attr_accessible :valor_x, :valor_y, :valor_z
   validates_presence_of :prueba_id, :valor_x, :valor_y, :valor_z
 end
 

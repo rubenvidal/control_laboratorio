@@ -269,6 +269,7 @@ img.hbg_img {
 }
 #content_right{
   float: left;
+  margin-right: 20px;
 }
 .footer {
 }

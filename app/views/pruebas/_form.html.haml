@@ -23,11 +23,13 @@
         =render 'composicion_fields', :composicion_fields => composicion_fields
       %p
         = f.link_to_add "Añade un producto", :composiciones
-        = f.submit
+
   #right
     %fieldset
       %legend control de la prueba
-      -f.fields_for :controles do |control_fields|
+      -f.fields_for :control do |control_fields|
         =render 'control_fields', :control_fields => control_fields
   .clear
+  %p
+    =f.submit
 

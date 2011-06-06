@@ -9,6 +9,9 @@
   %p
     %strong Partida:
     = @prueba.partida
+  %p
+    %strong Horno:
+    = @prueba.horno.try(:codigo)
 #content_right
   %table
     %thead
@@ -25,5 +28,21 @@
   #enlacebotton
     = link_to "Eliminar",[@pasta, @prueba], :confirm => '¿Estas seguro? Esta acción no se podra deshacer.', :method => :delete
     = link_to "Pruebas", pasta_pruebas_path(@pasta)
+#right
+  %table
+    %thead
+      %tr
+        %th{:colspan => 3}
+          Control
+    %tbody
+      %td
+        %strong Valor_x:
+        = @prueba.control.try(:valor_x)
+      %td
+        %strong Valor_y:
+        = @prueba.control.try(:valor_y)
+      %td
+        %strong Valor_z:
+        = @prueba.control.try(:valor_z)
 .clear
 
