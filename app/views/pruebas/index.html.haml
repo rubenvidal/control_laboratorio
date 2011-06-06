@@ -1,17 +1,15 @@
 - title "Pruebas"
-#enlacebotton
-  %table
-    %tr
-      %th Pasta
-      %th Fecha
-      %th Partida
-    - for prueba in @pruebas
-      %tr{:class => cycle("","odd")}
-        %td= prueba.pasta_id
-        %td= l prueba.fecha, :format => :long
-        %td= prueba.partida
-        %td= link_to 'Vista prueba', [@pasta, prueba]
-        %td= link_to 'Modificar', edit_pasta_prueba_path(@pasta,     prueba)
-        %td= link_to 'Eliminar', [@pasta, prueba], :confirm => 'Are you sure?', :method => :delete
+%table
+  %tr
+    %th Pasta
+    %th Fecha
+    %th Partida
+  - for prueba in @pruebas
+    %tr{:class => cycle("","odd")}
+      %td= prueba.pasta.codigo
+      %td= link_to (l prueba.fecha, :format => :long), [@pasta, prueba]
+      %td= prueba.partida
+      %td.enlacebotton= link_to 'Modificar', edit_pasta_prueba_path(@pasta,     prueba)
 
+#enlacebotton
   %p= link_to "Nueva Prueba", new_pasta_prueba_path(@pasta)

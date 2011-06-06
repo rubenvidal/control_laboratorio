@@ -2,7 +2,7 @@
 
 %p
   %strong Proveedor:
-  = @producto.proveedor_id
+  = @producto.proveedor.nombre
 %p
   %strong Referencia:
   = @producto.referencia
@@ -10,9 +10,7 @@
   %strong Caracteristica:
   = @producto.caracteristica
 
-%p
-  = link_to "Edit", edit_producto_path(@producto)
-  |
-  = link_to "Destroy", @producto, :confirm => 'Are you sure?', :method => :delete
-  |
-  = link_to "View All", productos_path
+#enlacebotton
+  %p
+    = link_to "Eliminar", @producto, :confirm => '¿Estas seguro? Esta acción no se podra deshacer.', :method => :delete
+    = link_to "Productos", productos_path

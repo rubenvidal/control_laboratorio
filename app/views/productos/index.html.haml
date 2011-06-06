@@ -7,11 +7,9 @@
     %th Caracteristica
   - for producto in @productos
     %tr
-      %td= producto.proveedor.codigo_proveedor
-      %td= producto.referencia
+      %td= producto.proveedor.nombre
+      %td= link_to producto.referencia, producto
       %td= producto.caracteristica
-      %td= link_to 'Show', producto
-      %td= link_to 'Edit', edit_producto_path(producto)
-      %td= link_to 'Destroy', producto, :confirm => 'Are you sure?', :method => :delete
-
-%p= link_to "New Producto", new_producto_path
+      %td.enlacebotton= link_to 'Modificar', edit_producto_path(producto)
+#enlacebotton
+  %p= link_to "Nuevo producto", new_producto_path

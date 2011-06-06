@@ -76,14 +76,6 @@ a {
   margin: 0;
   margin-left: 25px;
 }
-#quema td {
-  width: 150px;
-  text-align: center;
-}
-#quemador th , #quemador td {
-  width: 180px;
-  text-align: center;
-}
 .fields input, select {
   width: 150px;
 }
@@ -106,7 +98,8 @@ a {
 }
 .enlacebotton a:hover {
   background: #909090;
-}#enlacebotton a {
+}
+#enlacebotton a {
   background: #B0B0B0;
   color: #ffffff;
   border: 2px ridge #808080;
@@ -323,6 +316,21 @@ th {
 table {
   margin: auto;
   border-spacing: 0px;
+}
+table.nh{
+  margin: 0px;
+}
+table.nh td{
+  width: 138px;
+  text-align: center;
+}
+#quema td {
+  width: 138px;
+  text-align: center;
+}
+#quemador th , #quemador td {
+  width: 180px;
+  text-align: center;
 }
 td {
   text-align: center;

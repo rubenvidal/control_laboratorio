@@ -23,8 +23,7 @@
           %td= composicion.porcentaje
           %td= composicion.comentario
   #enlacebotton
-    = link_to "Edit", edit_pasta_prueba_path(@pasta, @prueba)
-    = link_to "Destroy",[@pasta, @prueba], :confirm => 'Are you sure?', :method => :delete
-    = link_to "View All", pasta_pruebas_path(@pasta)
+    = link_to "Eliminar",[@pasta, @prueba], :confirm => '¿Estas seguro? Esta acción no se podra deshacer.', :method => :delete
+    = link_to "Pruebas", pasta_pruebas_path(@pasta)
 .clear
 

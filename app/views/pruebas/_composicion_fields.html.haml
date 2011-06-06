@@ -1,8 +1,3 @@
-= f.label :producto_id
-= f.select(:producto_id, @productos , {:prompt => 'productos'})
-%br
-= f.label :porcentaje
-= f.text_field :porcentaje
-%br
-= f.label :comentario
-= f.text_field :comentario
+= composicion_fields.select(:producto_id, @productos , {:prompt => '--productos--'})
+=composicion_fields.text_field :porcentaje
+=composicion_fields.text_field :comentario

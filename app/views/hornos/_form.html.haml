@@ -14,13 +14,14 @@
     = f.text_field :descripcion
     %br
   #quema
-    %table
+    %table.nh
       %tr
         %td Quemador
         %td Cantidad Mecheros
         %td Posición
-    - f.fields_for :quemadores do |builder|
-      = render 'quemador_fields', :f => builder
-    = f.link_to_add "Añade un quemador", :quemadores
+    #enlacebotton
+      - f.fields_for :quemadores do |builder|
+        = render 'quemador_fields', :f => builder
+      = f.link_to_add "Añade un quemador", :quemadores
   %p
     = f.submit

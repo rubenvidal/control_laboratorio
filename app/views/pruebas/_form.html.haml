@@ -12,8 +12,13 @@
     %br
     = f.text_field :partida
   #enlacebotton
-    - f.fields_for :composiciones do |builder|
-      =render 'composicion_fields', :f => builder
+    %table.nh
+      %tr
+        %td Producto
+        %td Porcentaje
+        %td Comentario
+    - f.fields_for :composiciones do |composicion_fields|
+      =render 'composicion_fields', :composicion_fields => composicion_fields
     = f.link_to_add "Añade un producto", :composiciones
   %p
     = f.submit

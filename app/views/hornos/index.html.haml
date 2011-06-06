@@ -1,17 +1,15 @@
 - title "Hornos"
-#enlacebotton
-  %table
+%table
+  %tr
+    %th Codigo
+    %th Longitud
+    %th Descripcion
+  - for horno in @hornos
     %tr
-      %th Codigo
-      %th Longitud
-      %th Descripcion
-    - for horno in @hornos
-      %tr
-        %td= horno.codigo
-        %td= horno.longitud
-        %td= horno.descripcion
-        %td= link_to 'Vista', horno
-        %td= link_to 'Modificación', edit_horno_path(horno)
-        %td= link_to 'Eliminar', horno, :confirm => '¿Estas seguro? Esta acción no se podra deshacer', :method => :delete
+      %td= link_to horno.codigo, horno
+      %td= horno.longitud
+      %td= horno.descripcion
+      %td.enlacebotton= link_to 'Modificación', edit_horno_path(horno)
 
+#enlacebotton
   %p= link_to "Nuevo horno", new_horno_path
