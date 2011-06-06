@@ -76,17 +76,7 @@ a {
   margin: 0;
   margin-left: 25px;
 }
-/*****************************************/
-/******* formularios *********************/
-#prueba_fecha_3i ,#prueba_fecha_4i, #prueba_fecha_5i {
-  width: 45px;
-}
-#prueba_fecha_2i, #prueba_fecha_1i {
-  width: 100px;
-}
-.fields input, select {
-  width: 150px;
-}
+
 /*****************************************************************/
 /***************** Botones ***************************************/
 .enlacebotton a {
@@ -349,15 +339,31 @@ tr.odd {
 }
 /********************************************************************/
 /***************  formularios **************************************/
-
+#prueba_fecha_3i ,#prueba_fecha_4i, #prueba_fecha_5i {
+  width: 45px;
+}
+#prueba_fecha_2i, #prueba_fecha_1i {
+  width: 100px;
+}
+.fields input, select {
+  width: 150px;
+}
 ol li label {
   text-align: left;
-  width: 20%;
+  width: 100px;
   display: block;
   float: left;
 }
-li{
+ol li{
   list-style: none;
+  margin: 5px 0px 5px 0px;
+}
+#left{
+  float: left;
+  width: 60%;
+}
+#right{
+  float: left;
 }
 /*****************************************************************/
 /************* vistas   ******************************************/

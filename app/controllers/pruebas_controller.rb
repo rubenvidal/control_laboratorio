@@ -27,6 +27,7 @@ class PruebasController < ApplicationController
 
   def edit
     @prueba = @pasta.pruebas.find(params[:id])
+    @prueba.controles.build
     find_productos
   end
 

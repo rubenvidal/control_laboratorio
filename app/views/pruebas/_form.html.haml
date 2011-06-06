@@ -1,25 +1,33 @@
 = nested_form_for [@pasta, @prueba] do |f|
   = f.error_messages
-  %ol
-    %li
-      = "Pasta #{@pasta.id}"
-    %li
-      = f.label :fecha
-      = f.datetime_select :fecha
-    %li
-      = f.label :partida
-      = f.text_field :partida
-    %li
-      = f.label :horno_id
-      = select("prueba", "horno_id", Horno.all.collect {|p| [p.codigo, p.id]}, {:prompt => '--Hornos--'})
-  #enlacebotton
-    %table.nh
-      %tr
-        %td Producto
-        %td Porcentaje
-        %td Comentario
-    - f.fields_for :composiciones do |composicion_fields|
-      =render 'composicion_fields', :composicion_fields => composicion_fields
-    = f.link_to_add "Añade un producto", :composiciones
-  %p
-    = f.submit
+  #left
+    %ol
+      %li
+        = "Pasta #{@pasta.id}"
+      %li
+        = f.label :fecha
+        = f.datetime_select :fecha
+      %li
+        = f.label :partida
+        = f.text_field :partida
+      %li
+        = f.label :horno_id
+        = select("prueba", "horno_id", Horno.all.collect {|p| [p.codigo, p.id]}, {:prompt => '--Hornos--'})
+    #enlacebotton
+      %table.nh
+        %tr
+          %td Producto
+          %td Porcentaje
+          %td Comentario
+      - f.fields_for :composiciones do |composicion_fields|
+        =render 'composicion_fields', :composicion_fields => composicion_fields
+      %p
+        = f.link_to_add "Añade un producto", :composiciones
+        = f.submit
+  #right
+    %fieldset
+      %legend control de la prueba
+      -f.fields_for :controles do |control_fields|
+        =render 'control_fields', :control_fields => control_fields
+  .clear
+

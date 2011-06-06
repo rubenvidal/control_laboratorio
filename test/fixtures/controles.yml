@@ -1,0 +1,27 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  prueba_id: 1
+  valor_x: 1
+  valor_y: 1
+  valor_z: 1
+
+two:
+  prueba_id: 1
+  valor_x: 1
+  valor_y: 1
+  valor_z: 1
+
+# == Schema Information
+#
+# Table name: controles
+#
+#  id         :integer         not null, primary key
+#  prueba_id  :integer
+#  valor_x    :integer
+#  valor_y    :integer
+#  valor_z    :integer
+#  created_at :datetime
+#  updated_at :datetime
+#
+

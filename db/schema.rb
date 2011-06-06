@@ -10,13 +10,22 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110606092645) do
+ActiveRecord::Schema.define(:version => 20110606110647) do
 
   create_table "composiciones", :force => true do |t|
     t.integer  "prueba_id"
     t.integer  "producto_id"
     t.integer  "porcentaje"
     t.string   "comentario"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "controles", :force => true do |t|
+    t.integer  "prueba_id"
+    t.integer  "valor_x"
+    t.integer  "valor_y"
+    t.integer  "valor_z"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
