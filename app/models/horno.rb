@@ -2,6 +2,7 @@ class Horno < ActiveRecord::Base
   attr_accessible :codigo, :longitud, :descripcion, :quemadores_attributes
   has_many :quemadores, :dependent => :destroy
   has_many :mediciones
+  has_many :pruebas
   accepts_nested_attributes_for :quemadores,
     :reject_if => lambda { |a| a[:nombre].blank? }, :allow_destroy => true
 end

@@ -8,6 +8,7 @@ two:
   fecha: 2011-05-31 15:09:53
   partida: MyString
 
+
 # == Schema Information
 #
 # Table name: pruebas
@@ -18,5 +19,6 @@ two:
 #  partida    :string(255)
 #  created_at :datetime
 #  updated_at :datetime
+#  horno_id   :integer
 #
 

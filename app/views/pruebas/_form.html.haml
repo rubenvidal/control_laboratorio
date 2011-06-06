@@ -1,16 +1,17 @@
 = nested_form_for [@pasta, @prueba] do |f|
   = f.error_messages
-  %p
-
-    = "Pasta #{@pasta.id}"
-  %p
-    = f.label :fecha
-    %br
-    = f.datetime_select :fecha
-  %p
-    = f.label :partida
-    %br
-    = f.text_field :partida
+  %ol
+    %li
+      = "Pasta #{@pasta.id}"
+    %li
+      = f.label :fecha
+      = f.datetime_select :fecha
+    %li
+      = f.label :partida
+      = f.text_field :partida
+    %li
+      = f.label :horno_id
+      = select("prueba", "horno_id", Horno.all.collect {|p| [p.codigo, p.id]}, {:prompt => '--Hornos--'})
   #enlacebotton
     %table.nh
       %tr

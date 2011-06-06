@@ -8,7 +8,7 @@
       %th Velocidad horno
     - for medicion in @mediciones
       %tr
-        %td= medicion.horno_id
+        %td= medicion.horno.codigo
         %td= l medicion.fecha, :format => :long
         %td= medicion.operario
         %td= medicion.velocidad_horno
