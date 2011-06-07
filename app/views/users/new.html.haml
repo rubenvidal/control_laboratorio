@@ -1,0 +1,22 @@
+%h1 Registro de usuarios
+= form_for @user do |f|
+  -if @user.errors.any?
+    .error_messages
+      %h2 Formulario invalido
+      %ul
+        -for message in @user.errors.full_messages
+          %li= message
+  %ul
+    %li
+      = f.label :nombre
+      = f.text_field :nombre
+    %li
+      = f.label :email
+      = f.text_field :email
+    %li
+      = f.label :password
+      = f.text_field :password
+    %li
+      = f.label :password_confirmation
+      = f.text_field :password_confirmation
+  %p= f.submit

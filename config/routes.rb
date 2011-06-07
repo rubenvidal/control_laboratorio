@@ -1,6 +1,8 @@
 ControlLaboratorio::Application.routes.draw do
 
-  #resources :composiciones
+  get "registro" => "users#new", :as => "registro"
+
+  resources :users
 
   resources :productos
 
