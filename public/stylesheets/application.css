@@ -25,6 +25,7 @@ a {
 #flash_notice, #flash_error, #flash_alert {
   padding: 5px 8px;
   margin: 10px 0;
+  width: 75%;
 }
 
 #flash_notice {
@@ -296,6 +297,12 @@ img.hbg_img {
 }
 .footer .rf {
 	float:right;
+}
+/***********************************************************/
+/***************** menu de usuario *************************/
+
+#user_nav{
+  float: right;
 }
 /***********************************************************/
 /*************** la clase clear ****************************/

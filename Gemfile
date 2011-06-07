@@ -8,7 +8,7 @@ gem 'rails', '3.0.8.rc2'
 gem 'sqlite3'
 gem 'haml-rails'
 gem 'nested_form'
-
+gem 'bcrypt-ruby', :require => 'bcrypt'
 gem 'jquery-rails', '>= 0.2.6'
 
 group :development do
