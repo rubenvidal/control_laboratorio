@@ -13,7 +13,5 @@
         %td= medicion.operario
         %td= medicion.velocidad_horno
         %td= link_to 'Vista medición', [@horno, medicion]
-        %td= link_to 'Modificación', edit_horno_medicion_path(@horno, medicion)
-        %td= link_to 'Eliminar', [@horno, medicion], :confirm => 'Estas seguro, esta acción no se podra deshacer?', :method => :delete
 
   %p= link_to "Nueva medición", new_horno_medicion_path(@horno)

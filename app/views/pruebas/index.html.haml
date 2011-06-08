@@ -1,17 +1,19 @@
 - title "Pruebas"
 %table
   %tr
-    %th Pasta
+    - if @pasta.nil?
+      %th Pasta
     %th Fecha
     %th Horno
     %th Partida
   - for prueba in @pruebas
     %tr{:class => cycle("even","odd")}
-      %td= prueba.pasta.codigo
-      %td= link_to (l prueba.fecha, :format => :long), [@pasta, prueba]
+      - if @pasta.nil?
+        %td= prueba.pasta.codigo
+      %td= link_to (l prueba.fecha, :format => :long), pasta_prueba_path(prueba.pasta_id, prueba)
       %td= prueba.horno.try(:codigo)
       %td= prueba.partida
-      %td.enlacebotton= link_to 'Modificar', edit_pasta_prueba_path(@pasta,     prueba)
+      %td.enlacebotton= link_to 'Modificar', edit_pasta_prueba_path(prueba.pasta_id, prueba)
 
 #enlacebotton
-  %p= link_to "Nueva Prueba", new_pasta_prueba_path(@pasta)
+  %p= link_to "Nueva Prueba", new_prueba_path

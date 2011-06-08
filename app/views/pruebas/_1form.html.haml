@@ -1,10 +1,9 @@
-= nested_form_for  @prueba do |f|
+= nested_form_for [@pasta, @prueba] do |f|
   = f.error_messages
   #left
     %ol
       %li
-        = f.label :pasta_id
-        = select("prueba", "pasta_id", Pasta.all.collect {|p| [p.codigo, p.id]}, {:prompt => '--Pasta--'})
+        = "Pasta #{@pasta.id}"
       %li
         = f.label :fecha
         = f.datetime_select :fecha

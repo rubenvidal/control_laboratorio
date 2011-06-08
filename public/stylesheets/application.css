@@ -200,8 +200,8 @@ a.rm {
 a.com {
 }
 /*******************************************************************/
-/******* region header y menu_nav **********************************/
-.header, .content, .menu_nav, .fbg, .footer, form, ol, ol li, ul, .content .mainbar, .content .sidebar {
+/******* region header y menu_nav ***menu_admin*********************/
+.header, .content, .menu_nav, .fbg, .footer, form, ol, ol li, ul, .content .mainbar, .content .sidebar, .menu_admin {
 	margin:0;
 	padding:0;
 }
@@ -217,6 +217,16 @@ img.hbg_img {
 	padding:11px;
 	background-color:#fff;
 	border-bottom:2px solid #e7e7e7;
+}
+.menu_admin{
+  float: right;
+  bottom: 0;
+}
+.menu_admin ul li{
+  list-style: none;
+  float: left;
+  text-decoration: none;
+  padding: 0px 0px 2px 5px;
 }
 .menu_nav {
 	margin:0 auto;

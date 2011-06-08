@@ -28,6 +28,6 @@
             %td= valor.presion
   #enlacebotton
     = link_to "Modificación", edit_horno_medicion_path(@horno, @medicion)
-    = link_to "Eliminar", [@horno, @medicion], :confirm => 'Are you sure?', :method => :delete
+    = link_to 'Eliminar', [@horno, @medicion], :confirm => 'Estas seguro, esta acción no se podra deshacer?', :method => :delete
     = link_to "vista general", horno_mediciones_path(@horno)
 .clear

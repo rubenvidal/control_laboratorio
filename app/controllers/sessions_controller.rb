@@ -1,5 +1,8 @@
 #encoding: utf-8
 class SessionsController < ApplicationController
+
+  skip_before_filter :autorizar, :only => [:new, :create]
+
   def new
   end
 
@@ -13,6 +16,7 @@ class SessionsController < ApplicationController
       render "new"
     end
   end
+
   def destroy
     session[:user_id] = nil
     redirect_to root_url, :notice => "Sesión cerrada"

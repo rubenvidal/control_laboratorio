@@ -2,6 +2,7 @@
 class MedicionesController < ApplicationController
   before_filter :find_horno
   before_filter :establecer_tab
+  skip_before_filter :autorizar, :except => [:destroy]
 
   def index
     @mediciones = @horno.mediciones.order('fecha desc')

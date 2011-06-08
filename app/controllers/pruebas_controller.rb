@@ -1,9 +1,21 @@
 #encoding: utf-8
 class PruebasController < ApplicationController
-  before_filter :find_pasta
+  before_filter :find_pasta, :except => [:new, :create]
   before_filter :establecer_tab
+  skip_before_filter :autorizar, :only => [:index, :edit, :update, :create, :new]
+
   def index
-    @pruebas = @pasta.pruebas.order('fecha desc')
+
+    @pruebas = @pasta.nil? ? Prueba.scoped : @pasta.pruebas
+
+    #unless @pasta
+      ##@pruebas = Prueba.find(:all, :order => 'fecha desc')
+      #@pruebas = Prueba.scoped()
+    #else
+      #@pruebas = @pasta.pruebas
+    #end
+    @pruebas = @pruebas.includes([:pasta, :horno]).order('fecha desc')
+
   end
 
   def show
@@ -11,14 +23,14 @@ class PruebasController < ApplicationController
   end
 
   def new
-    @prueba = @pasta.pruebas.new
+    @prueba = Prueba.new
     find_productos
   end
 
   def create
-    @prueba = @pasta.pruebas.new(params[:prueba])
+    @prueba = Prueba.new(params[:prueba])
     if @prueba.save
-      redirect_to [@pasta, @prueba], :notice => "La creación de la prueba se ejuto con exito."
+      redirect_to pruebas_path, :notice => "La creación de la prueba se ejuto con exito."
     else
       find_productos
       render :action => 'new'
@@ -36,7 +48,7 @@ class PruebasController < ApplicationController
   def update
     @prueba = @pasta.pruebas.find(params[:id])
     if @prueba.update_attributes(params[:prueba])
-      redirect_to [@pasta, @prueba], :notice  => "Successfully updated prueba."
+      redirect_to pruebas_path, :notice  => "La prueba se ha actualizado."
     else
       find_productos
       render :action => 'edit'
@@ -45,12 +57,14 @@ class PruebasController < ApplicationController
 
   def destroy
     @prueba = @pasta.pruebas.find(params[:id])
-    @prueba.destroy
-    redirect_to pasta_pruebas_url(@pasta), :notice => "Successfully destroyed prueba."
+    @prueba.destroy redirect_to pasta_pruebas_url(@pasta), :notice => "Successfully destroyed prueba."
   end
+
   private
     def find_pasta
-      @pasta = Pasta.find(params[:pasta_id])
+      if !params[:pasta_id].nil?
+        @pasta = Pasta.find(params[:pasta_id])
+      end
     end
     def establecer_tab
       @tab = "Pastas"
