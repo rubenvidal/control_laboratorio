@@ -1,5 +1,7 @@
 class Pasta < ActiveRecord::Base
   has_many :pruebas, :dependent => :destroy
+  has_many :hornos, :through => :pruebas
+  has_many :quemadores, :through => :hornos
   attr_accessible :codigo, :tipo_tierra, :descripcion, :pruebas_attributes, :id
 end
 

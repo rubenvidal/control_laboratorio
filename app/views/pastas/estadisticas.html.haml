@@ -1,0 +1,25 @@
+- title "Pasta #{@pasta.codigo}"
+#estadistica_left
+  %table
+    %thead
+      %tr
+        %th Fecha
+        %th Nº Partida
+    %tbody
+      -for prueba in @pasta.pruebas.order('fecha desc')
+        %tr
+          %td= link_to (l prueba.fecha, :format => :long), prueba_path
+          %td= prueba.partida
+#estadistica_right
+  %table
+    %thead
+      %tr
+        - @pasta.hornos.each do |horno|
+          - horno.quemadores.each do |quemador|
+            %th= quemador.nombre
+          %tbody
+            - horno.quemadores.each do |quemador|
+              %tr
+                -quemador.valores.each do |valor|
+                  %td= valor.temperatura
+

@@ -39,6 +39,11 @@ class PastasController < ApplicationController
     @pasta.destroy
     redirect_to pastas_url, :notice => "Successfully destroyed pasta."
   end
+
+  def estadisticas
+    @pasta = Pasta.find(params[:id])
+  end
+
   private
   def establecer_tab
     @tab = "Pastas"
