@@ -1,4 +1,4 @@
-- title "Prueba #{@pasta.codigo}"
+- title "Prueba #{@prueba.pasta.codigo}"
 #content_left
   %p
     %strong Pasta:
@@ -26,8 +26,11 @@
           %td= composicion.porcentaje
           %td= composicion.comentario
   #enlacebotton
-    = link_to "Eliminar",[@pasta, @prueba], :confirm => '¿Estas seguro? Esta acción no se podra deshacer.', :method => :delete
-    = link_to "Pruebas", pasta_pruebas_path(@pasta)
+    - if @pasta.nil?
+      = link_to "Eliminar", @prueba, :confirm => '¿Estas seguro? Esta acción no se podra deshacer.', :method => :delete
+      = link_to "Pruebas", pruebas_path
+    - else
+      = link_to "Pruebas", pasta_pruebas_path(@pasta)
 #right
   %table
     %thead

@@ -16,8 +16,7 @@ ControlLaboratorio::Application.routes.draw do
    resources :pruebas
   end
 
-  resources :pruebas, :only => [:index, :new, :create]
-
+  resources :pruebas
   resources :hornos do
     resources :mediciones
   end

@@ -271,7 +271,7 @@ img.hbg_img {
 	padding:0 0 24px;
 	width:970px;
 	background-color:#fff;
-	border:2px solid #e7e7e7;
+	border:2px solid #D8D8D8;
 	border-top:none;
 }
 #content_left{
@@ -281,6 +281,9 @@ img.hbg_img {
 #content_right{
   float: left;
   margin-right: 20px;
+}
+#content_right td{
+  max-width: 75px;
 }
 .footer {
 }

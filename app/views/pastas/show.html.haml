@@ -1,16 +1,28 @@
 - title "Pasta"
+#left
+  %p
+    %strong Codigo:
+    = @pasta.codigo
+  %p
+    %strong Tipo Tierra:
+    = @pasta.tipo_tierra
+  %p
+    %strong Descripcion:
+    = @pasta.descripcion
 
-%p
-  %strong Codigo:
-  = @pasta.codigo
-%p
-  %strong Tipo Tierra:
-  = @pasta.tipo_tierra
-%p
-  %strong Descripcion:
-  = @pasta.descripcion
-
-#enlacebotton
-  = link_to "Modificar", edit_pasta_path(@pasta)
-  = link_to "Eliminar", @pasta, :confirm => '¿Estas seguro? Esta acción no se puede deshacer', :method => :delete
-  = link_to "Vista general", pastas_path
+  #enlacebotton
+    = link_to "Modificar", edit_pasta_path(@pasta)
+    = link_to "Eliminar", @pasta, :confirm => '¿Estas seguro? Esta acción no se puede deshacer', :method => :delete
+    = link_to "Vista general", pastas_path
+#right
+  %table
+    %thead
+      %tr
+        %th Fecha
+        %th Nº Partida
+    %tbody
+      -for prueba in @pasta.pruebas.order('fecha desc')
+        %tr
+          %td= link_to (l prueba.fecha, :format => :long), prueba_path
+          %td= prueba.partida
+.clear

@@ -1,25 +1,24 @@
 #encoding: utf-8
 class PruebasController < ApplicationController
-  before_filter :find_pasta, :except => [:new, :create]
+  #before_filter :find_pasta, :except => [:new, :create, :edit, :update, :destroy]
+  before_filter :find_pasta #, :except => [:new, :create, :edit, :update, :destroy]
   before_filter :establecer_tab
-  skip_before_filter :autorizar, :only => [:index, :edit, :update, :create, :new]
+  skip_before_filter :autorizar, :only => [:index, :edit, :update, :create, :new, :show]
 
   def index
 
-    @pruebas = @pasta.nil? ? Prueba.scoped : @pasta.pruebas
-
-    #unless @pasta
-      ##@pruebas = Prueba.find(:all, :order => 'fecha desc')
-      #@pruebas = Prueba.scoped()
-    #else
-      #@pruebas = @pasta.pruebas
-    #end
-    @pruebas = @pruebas.includes([:pasta, :horno]).order('fecha desc')
+    if pasta
+      @pruebas = pasta.pruebas.includes([:pasta, :horno]).order('fecha desc')
+      render :template => "pruebas/pruebas_pasta"
+    else
+      @pruebas = Prueba.includes([:pasta, :horno]).order('fecha desc')
+      #render :template => "/pruebas/index"
+    end
 
   end
 
   def show
-    @prueba = @pasta.pruebas.find(params[:id])
+    @prueba = @pasta.nil? ? Prueba.find(params[:id]) : @pasta.pruebas.find(params[:id])
   end
 
   def new
@@ -38,7 +37,7 @@ class PruebasController < ApplicationController
   end
 
   def edit
-    @prueba = @pasta.pruebas.find(params[:id])
+    @prueba = Prueba.find(params[:id])
     if @prueba.control.nil?
       @prueba.build_control
     end
@@ -46,7 +45,7 @@ class PruebasController < ApplicationController
   end
 
   def update
-    @prueba = @pasta.pruebas.find(params[:id])
+    @prueba = pasta.pruebas.find(params[:id])
     if @prueba.update_attributes(params[:prueba])
       redirect_to pruebas_path, :notice  => "La prueba se ha actualizado."
     else
@@ -56,21 +55,27 @@ class PruebasController < ApplicationController
   end
 
   def destroy
-    @prueba = @pasta.pruebas.find(params[:id])
-    @prueba.destroy redirect_to pasta_pruebas_url(@pasta), :notice => "Successfully destroyed prueba."
+    @prueba = pasta.pruebas.find(params[:id])
+    @prueba.destroy redirect_to pruebas_url, :notice => "Se han borrado los datos de la prueba"
   end
 
   private
-    def find_pasta
-      if !params[:pasta_id].nil?
-        @pasta = Pasta.find(params[:pasta_id])
-      end
+  def pasta
+    if params[:pasta_id]
+      @pasta ||= Pasta.find(params[:pasta_id])
     end
-    def establecer_tab
-      @tab = "Pastas"
+  end
+
+  def find_pasta
+    if !params[:pasta_id].nil?
+      @pasta = Pasta.find(params[:pasta_id])
     end
-    def find_productos
-      @productos = Producto.all.collect {|p| [p.referencia, p.id]}
-    end
+  end
+  def establecer_tab
+    @tab = "Pruebas"
+  end
+  def find_productos
+    @productos = Producto.all.collect {|p| [p.referencia, p.id]}
+  end
 
 end
