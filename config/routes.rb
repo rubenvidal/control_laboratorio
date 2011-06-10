@@ -13,7 +13,9 @@ ControlLaboratorio::Application.routes.draw do
   resources :proveedores
 
   resources :pastas do
-   resources :pruebas
+    member do
+      get :estadisticas
+    end
   end
 
   resources :pruebas
@@ -21,7 +23,7 @@ ControlLaboratorio::Application.routes.draw do
     resources :mediciones
   end
 
-  root :to => "hornos#index"
+  root :to => "sessions#new"
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

@@ -1,19 +1,11 @@
 #encoding: utf-8
 class PruebasController < ApplicationController
-  #before_filter :find_pasta, :except => [:new, :create, :edit, :update, :destroy]
-  before_filter :find_pasta #, :except => [:new, :create, :edit, :update, :destroy]
   before_filter :establecer_tab
-  skip_before_filter :autorizar, :only => [:index, :edit, :update, :create, :new, :show]
+  skip_before_filter :autorizar
 
   def index
 
-    if pasta
-      @pruebas = pasta.pruebas.includes([:pasta, :horno]).order('fecha desc')
-      render :template => "pruebas/pruebas_pasta"
-    else
       @pruebas = Prueba.includes([:pasta, :horno]).order('fecha desc')
-      #render :template => "/pruebas/index"
-    end
 
   end
 
@@ -45,7 +37,7 @@ class PruebasController < ApplicationController
   end
 
   def update
-    @prueba = pasta.pruebas.find(params[:id])
+    @prueba = Prueba.find(params[:id])
     if @prueba.update_attributes(params[:prueba])
       redirect_to pruebas_path, :notice  => "La prueba se ha actualizado."
     else
@@ -55,22 +47,12 @@ class PruebasController < ApplicationController
   end
 
   def destroy
-    @prueba = pasta.pruebas.find(params[:id])
+    @prueba = Prueba.find(params[:id])
     @prueba.destroy redirect_to pruebas_url, :notice => "Se han borrado los datos de la prueba"
   end
 
   private
-  def pasta
-    if params[:pasta_id]
-      @pasta ||= Pasta.find(params[:pasta_id])
-    end
-  end
 
-  def find_pasta
-    if !params[:pasta_id].nil?
-      @pasta = Pasta.find(params[:pasta_id])
-    end
-  end
   def establecer_tab
     @tab = "Pruebas"
   end
