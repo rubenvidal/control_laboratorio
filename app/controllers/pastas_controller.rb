@@ -41,7 +41,8 @@ class PastasController < ApplicationController
   end
 
   def estadisticas
-    @pasta = Pasta.find(params[:id])
+    @pasta = Pasta.find(params[:id], :include => {:pruebas => [:horno, {:composiciones => :producto}]})
+    #@pruebas = @pasta.pruebas.paginate
   end
 
   private

@@ -1,4 +1,5 @@
 class Pasta < ActiveRecord::Base
+  paginates_per 1
   has_many :pruebas, :dependent => :destroy
   has_many :hornos, :through => :pruebas
   has_many :quemadores, :through => :hornos

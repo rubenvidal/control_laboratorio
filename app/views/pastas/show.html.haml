@@ -14,6 +14,8 @@
     = link_to "Modificar", edit_pasta_path(@pasta)
     = link_to "Eliminar", @pasta, :confirm => '¿Estas seguro? Esta acción no se puede deshacer', :method => :delete
     = link_to "Vista general", pastas_path
+  #estadistica
+    = link_to "Estadisticas", estadisticas_pasta_path
 #right
   %table
     %thead
@@ -23,6 +25,6 @@
     %tbody
       -for prueba in @pasta.pruebas.order('fecha desc')
         %tr
-          %td= link_to (l prueba.fecha, :format => :long), prueba_path
+          %td= link_to (l prueba.fecha, :format => :long), prueba_path(prueba)
           %td= prueba.partida
 .clear

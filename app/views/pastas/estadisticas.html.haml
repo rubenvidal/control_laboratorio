@@ -1,25 +1,51 @@
 - title "Pasta #{@pasta.codigo}"
 #estadistica_left
-  %table
-    %thead
-      %tr
-        %th Fecha
-        %th Nº Partida
-    %tbody
-      -for prueba in @pasta.pruebas.order('fecha desc')
+  -for prueba in @pasta.pruebas.order('fecha desc')
+    %table.estadistica
+      %thead
         %tr
-          %td= link_to (l prueba.fecha, :format => :long), prueba_path
+          %th Fecha
+          %th Nº Partida
+      %tbody
+        %tr
+          %td= link_to (l prueba.fecha, :format => :long), prueba_path(prueba)
           %td= prueba.partida
-#estadistica_right
-  %table
-    %thead
-      %tr
-        - @pasta.hornos.each do |horno|
-          - horno.quemadores.each do |quemador|
+    %table.estadistica
+      %thead
+        %tr
+          %th Producto
+          %th Porcentaje
+          %th comentario
+      -for composicion in prueba.composiciones
+        %tbody
+          %tr
+            %td= composicion.producto.referencia
+            %td= composicion.porcentaje
+            %td= composicion.comentario
+    %table.estadistica
+      %thead
+        %tr
+          %th Valor x
+          %th Valor y
+          %th Valor z
+      %tbody
+        %tr
+          %td= prueba.control.try(:valor_x)
+          %td= prueba.control.try(:valor_y)
+          %td= prueba.control.try(:valor_z)
+    .clear
+    %table
+      %thead
+        %tr
+          -prueba.horno.quemadores.each do |quemador|
             %th= quemador.nombre
-          %tbody
-            - horno.quemadores.each do |quemador|
-              %tr
-                -quemador.valores.each do |valor|
-                  %td= valor.temperatura
-
+          -# prueba.horno.mediciones.where("date(fecha) = :fecha", :fecha => prueba.fecha.to_date).each do |medicion|
+          - prueba.horno.mediciones.where(:fecha => prueba.fecha.to_date..(prueba.fecha.to_date + 1.day).to_date ).each do |medicion|
+            %tr
+            - medicion.valores.each do |valor|
+              %td
+                = valor.temperatura
+            %tr
+            - medicion.valores.each do |valor|
+              %td
+                = valor.presion

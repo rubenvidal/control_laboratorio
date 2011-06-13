@@ -394,3 +394,27 @@ ol li{
   float: left;
   width: 16%;
 }
+.estadistica{
+  float: left;
+  margin: 0px 5px 0px 5px;
+}
+#estadistica {
+  margin-top: 20px;
+  background-color: #3198D3;
+  background-image: -moz-linear-gradient(center top , #3198D3, #1578AF);
+  border: 1px solid #1578AF;
+  border-radius: 5px 5px 5px 5px;
+  box-shadow: 0 0 8px #FFFFFF inset;
+  color: #FFFFFF;
+  cursor: pointer;
+  display: block;
+  font-family: arial,sans-serif;
+  font-size: 24px;
+  padding: 10px 15px 10px 15px;
+  text-align: center;
+  text-decoration: none;
+  width: 155px;
+}
+#estadistica a{
+  text-decoration: none;
+}

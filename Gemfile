@@ -10,6 +10,7 @@ gem 'haml-rails'
 gem 'nested_form'
 gem 'bcrypt-ruby', :require => 'bcrypt'
 gem 'jquery-rails', '>= 0.2.6'
+gem 'kaminari'
 
 group :development do
   gem 'wirble'
