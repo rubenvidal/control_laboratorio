@@ -1,6 +1,6 @@
 - title "Pasta #{@pasta.codigo}"
 #estadistica_left
-  -for prueba in @pasta.pruebas.order('fecha desc')
+  -for prueba in @pruebas
     %table.estadistica
       %thead
         %tr
@@ -49,3 +49,5 @@
             - medicion.valores.each do |valor|
               %td
                 = valor.presion
+#paginador
+  = paginate @pruebas

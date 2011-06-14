@@ -388,7 +388,20 @@ ol li{
 }
 /*****************************************************************/
 /************* vistas   ******************************************/
-
+.pagination{
+  margin: auto;
+  padding: 20px 0px 0px 0px;
+  text-align: center;
+}
+.pagination a{
+  text-decoration: none;
+}
+.first{
+  margin-right: 10px;
+}
+.last{
+  margin-left: 10px;
+}
 .vista{
   display: block;
   float: left;
@@ -396,7 +409,7 @@ ol li{
 }
 .estadistica{
   float: left;
-  margin: 0px 5px 0px 5px;
+  margin: 0px 15px 15px 5px;
 }
 #estadistica {
   margin-top: 20px;

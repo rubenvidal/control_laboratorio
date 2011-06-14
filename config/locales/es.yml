@@ -185,6 +185,8 @@
         format: "%{attribute}%{message}"
   views:
     pagination:
-      previous: "&lt; Anterior"
-      next: "&gt; &gt; Siguiente"
-      truncate: "..."
+      previous: "&lt; &lt;"
+      next: "&gt &gt;"
+      first: "Primero"
+      last: "Ultimo"
+      truncate: "&hellip;"
